@@ -1,35 +1,23 @@
 import React from 'react';
-import { StyleSheet, Text, View , TextInput, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, View , TouchableOpacity} from 'react-native';
 import { Ionicons,Fontisto } from '@expo/vector-icons';
-import TextInputField from '../components/TextInputField';
-import CustomButton from '../components/CustomButton';
-import ArrowButton from '../components/ArrowButton';
 
-const LoginScreen=(props)=> {
+
+const ArrowButton=(props)=> {
     return (
-        <View style={styles.container}>
 
-            <ArrowButton/>
+            <TouchableOpacity >
+                <Ionicons name="arrow-back" size={30} color="#F55353" />
+            </TouchableOpacity>
 
-            <Text style={styles.header}>Verify Number</Text>
-            <View style={styles.row}>
-                <View>
-                    <Text style={styles.circleShape}>+91</Text>
-                </View>
-
-                 <TextInputField text="Enter number" keyboardType={'numeric'} />
-
-            </View>
-            <CustomButton/>
-        </View>
       );
     }
 
-    export default LoginScreen;
+    export default ArrowButton;
     const styles = StyleSheet.create({
       container: {
         backgroundColor: '#fff',
-        marginTop: 40,
+        marginTop: 20,
         marginLeft: 10,
         marginRight:30
       },
