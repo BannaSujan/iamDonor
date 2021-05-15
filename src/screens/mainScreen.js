@@ -6,7 +6,6 @@ export default function mainScreen() {
   return (
     <View style={styles.container}>
       <Text>this is the main screen</Text>
-      <StatusBar style="auto" />
     </View>
   );
 }
