@@ -23,6 +23,7 @@ const MobileVerificationScreen = ({ navigation }) => {
           onPress={() => {
             navigation.navigate("OTP");
           }}
+          buttontitle="Send OTP"
         />
       </View>
       {/* <View style={styles.content}></View> */}
@@ -55,7 +56,7 @@ const styles = StyleSheet.create({
 
   svgCurve: {
     // top:70,
-    top: 60,
+    top: 70,
 
     // backgroundColor:'black',
   },

@@ -50,7 +50,8 @@ const styles = StyleSheet.create({
   },
   svgCurve: {
     position: "absolute",
-    top: 342,
+    top: 343,
+    backgroundColor:Colors.white
   },
   above: {
     backgroundColor: Colors.primary,
