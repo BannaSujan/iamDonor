@@ -14,8 +14,16 @@ function Navigation(props) {
                 <Stack.Screen name="Login" component={LoginScreen} options={{
                     headerShown:false
                 }}/>
-                <Stack.Screen name="MobileVerification" component={MobileVerificationScreen}/>
-                <Stack.Screen name='OTP' component={OTPScreen}/>
+                <Stack.Screen name="MobileVerification" component={MobileVerificationScreen} 
+                options={{
+                    headerShown:false
+                }}
+                />
+                <Stack.Screen name='OTP' component={OTPScreen}
+                options={{
+                    headerShown:false
+                }}
+                />
             </Stack.Navigator>
         </NavigationContainer>
     );

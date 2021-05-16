@@ -5,14 +5,14 @@ import Colors from "../contants/Colors";
 
 
 
-const CustomButton=({onPress})=> {
+const CustomButton=(props)=> {
 
 
     return (
         
             <View >
-                  <TouchableOpacity style={styles.appButtonContainer}>
-                      <Text style={styles.appButtonText} onPress={onPress}>{props.buttontitle}</Text>
+                  <TouchableOpacity onPress={props.onPress} style={styles.appButtonContainer}>
+                      <Text style={styles.appButtonText} >{props.buttontitle}</Text>
                   </TouchableOpacity>
             </View>
 

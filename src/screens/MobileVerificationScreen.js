@@ -8,8 +8,9 @@ import Colors from "../contants/Colors";
 const MobileVerificationScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
+
       <View style={styles.content}>
-        <ArrowButton />
+        <ArrowButton onPress={()=> {navigation.goBack()}}/>
         <Text style={styles.header}>Verify Number</Text>
         <View style={styles.row}>
           <View>
@@ -48,7 +49,7 @@ export default MobileVerificationScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-
+    backgroundColor:Colors.white,
     marginTop: StatusBar.currentHeight,
   },
 

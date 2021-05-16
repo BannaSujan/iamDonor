@@ -7,8 +7,8 @@ import MobileVerificationScreen from './src/screens/MobileVerificationScreen';
 
 export default function App() {
   return (
-    // <Navigation/>
-    <MobileVerificationScreen/>
+    <Navigation/>
+    // <MobileVerificationScreen/>
   );
 }
 

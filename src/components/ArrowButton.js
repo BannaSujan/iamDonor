@@ -4,8 +4,8 @@ import { Ionicons, Fontisto } from "@expo/vector-icons";
 import Colors from "../contants/Colors";
 const ArrowButton = (props) => {
   return (
-    <TouchableOpacity>
-      <Ionicons name="arrow-back" size={30} color={Colors.primary} />
+    <TouchableOpacity onPress={props.onPress}>
+      <Ionicons name="arrow-back" size={30} color={Colors.primary } />
     </TouchableOpacity>
   );
 };
