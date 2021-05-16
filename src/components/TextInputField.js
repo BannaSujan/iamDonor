@@ -17,7 +17,7 @@ const TextInputField = ({ text, keyboardType }) => {
 export default TextInputField;
 const styles = StyleSheet.create({
   mobileNumber: {
-    width: 250,
+    width: 290,
     height: 47,
     backgroundColor: Colors.gray,
     paddingVertical: 10,
