@@ -8,7 +8,7 @@ import Colors from "../contants/Colors";
 const MobileVerificationScreen = (props) => {
   return (
     <View style={styles.container}>
-      <View style={styles.content}>
+      {/* <View style={styles.content}>
         <ArrowButton />
 
         <Text style={styles.header}>Verify Number</Text>
@@ -20,7 +20,7 @@ const MobileVerificationScreen = (props) => {
           <TextInputField text="Enter number" keyboardType={"numeric"} />
         </View>
         <CustomButton />
-      </View>
+      </View> */}
 
       <View style={styles.svg}>
         <Svg
@@ -43,6 +43,11 @@ const MobileVerificationScreen = (props) => {
 
 export default MobileVerificationScreen;
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: StatusBar.currentHeight,
+  },
+
   svg: {
     flex: 1,
   },
@@ -65,10 +70,7 @@ const styles = StyleSheet.create({
     marginLeft: "2%",
     marginRight: "2%",
   },
-  container: {
-    flex: 1,
-    marginTop: StatusBar.currentHeight,
-  },
+
   header: {
     fontSize: 22,
     fontWeight: "bold",
