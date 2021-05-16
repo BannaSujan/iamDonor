@@ -1,61 +1,45 @@
-import React from 'react';
-import { StyleSheet, Text, View , TextInput, TouchableOpacity} from 'react-native';
-import { Ionicons,Fontisto } from '@expo/vector-icons';
-import TextInputField from '../components/TextInputField';
-import CustomButton from '../components/CustomButton';
-import ArrowButton from '../components/ArrowButton';
+import React from "react";
+import { StyleSheet, Text, View, Dimensions, StatusBar } from "react-native";
+import Svg, { Path } from "react-native-svg";
 
-const LoginScreen=(props)=> {
-    return (
-        <View style={styles.container}>
+import Colors from "../contants/Colors";
+const LoginScreen = (props) => {
+  return (
+    <View style={styles.container}>
+      {/* code here */}
 
-            <ArrowButton/>
+      <View style={styles.svg}>
+        <Svg
+          height="50%"
+          width="100%"
+          viewBox="0 0 1440 320"
+          style={styles.svgCurve}
+        >
+          <Path
+            fill= {Colors.primary}
+            // d="M0,64L80,80C160,96,320,128,480,170.7C640,213,800,267,960,256C1120,245,1280,171,1360,133.3L1440,96L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+            d="M0,256L80,224C160,192,320,128,480,128C640,128,800,192,960,186.7C1120,181,1280,107,1360,69.3L1440,32L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+            // d="M0,0L80,32C160,64,320,128,480,165.3C640,203,800,213,960,202.7C1120,192,1280,160,1360,144L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
+          />
+        </Svg>
+        <View style={styles.below}></View>
+      </View>
+    </View>
+  );
+};
 
-            <Text style={styles.header}>Verify Number</Text>
-            <View style={styles.row}>
-                <View>
-                    <Text style={styles.circleShape}>+91</Text>
-                </View>
+export default LoginScreen;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
 
-                 <TextInputField text="Enter number" keyboardType={'numeric'} />
-
-            </View>
-            <CustomButton/>
-        </View>
-      );
-    }
-
-    export default LoginScreen;
-    const styles = StyleSheet.create({
-      container: {
-        backgroundColor: '#fff',
-        marginTop: 40,
-        marginLeft: 10,
-        marginRight:30
-      },
-      header: {
-        fontSize: 22,
-        fontWeight: 'bold',
-        padding: 10,
-        marginLeft: 12,
-      },
-      circleShape: {
-          padding: 10,
-          marginLeft: 22,
-          height:48,
-          width:45,
-          color:"#808080",
-          backgroundColor: '#EEECEC',
-          marginTop:10,
-          marginEnd:6,
-          marginStart:6,
-          borderRadius:24,
-          textAlign:'center',
-          textAlignVertical:'center'
-        },
-        row: {
-            flexDirection: "row"
-          },
-
-
+  svgCurve: {
+    position: "absolute",
+    top: 342,
+  },
+  below: {
+    backgroundColor: Colors.primary,
+    height: 400,
+  },
 });
