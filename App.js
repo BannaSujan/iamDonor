@@ -1,13 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import LoginScreen from './src/screens/LoginScreen';
-
+import Navigation from './src/navigation/Navigation';
 import MobileVerificationScreen from './src/screens/MobileVerificationScreen';
+
 
 export default function App() {
   return (
-    // <LoginScreen/>
+    // <Navigation/>
     <MobileVerificationScreen/>
   );
 }

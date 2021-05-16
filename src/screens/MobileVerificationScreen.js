@@ -5,12 +5,11 @@ import TextInputField from "../components/TextInputField";
 import CustomButton from "../components/CustomButton";
 import ArrowButton from "../components/ArrowButton";
 import Colors from "../contants/Colors";
-const MobileVerificationScreen = (props) => {
+const MobileVerificationScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      {/* <View style={styles.content}>
+      <View style={styles.content}>
         <ArrowButton />
-
         <Text style={styles.header}>Verify Number</Text>
         <View style={styles.row}>
           <View>
@@ -19,9 +18,13 @@ const MobileVerificationScreen = (props) => {
 
           <TextInputField text="Enter number" keyboardType={"numeric"} />
         </View>
-        <CustomButton />
-      </View> */}
-
+        <CustomButton
+          onPress={() => {
+            navigation.navigate("OTP");
+          }}
+        />
+      </View>
+      {/* <View style={styles.content}></View> */}
       <View style={styles.svg}>
         <Svg
           height="50%"
@@ -45,22 +48,23 @@ export default MobileVerificationScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+
     marginTop: StatusBar.currentHeight,
   },
 
-  svg: {
-    flex: 1,
-  },
   svgCurve: {
-    top: 50,
-  },
-  below: {
-    backgroundColor: Colors.primary,
-    height: 200,
+    // top:70,
+    top: 60,
 
-    alignItems: "flex-end",
-    alignContent: "flex-end",
+    // backgroundColor:'black',
+  },
+
+  below: {
+    flex: 1,
     justifyContent: "flex-end",
+    alignItems: "flex-end",
+    backgroundColor: Colors.primary,
+    // height: 400,
   },
   content: {
     backgroundColor: Colors.white,

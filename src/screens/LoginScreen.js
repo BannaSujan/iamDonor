@@ -1,9 +1,9 @@
 import React from "react";
-import { StyleSheet, Text, View, Dimensions, StatusBar } from "react-native";
+import { StyleSheet, Text, View, Dimensions, StatusBar,TouchableOpacity,Button } from "react-native";
 import Svg, { Path } from "react-native-svg";
 
 import Colors from "../contants/Colors";
-const LoginScreen = (props) => {
+const LoginScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
       {/* code here */}
@@ -22,8 +22,16 @@ const LoginScreen = (props) => {
             // d="M0,0L80,32C160,64,320,128,480,165.3C640,203,800,213,960,202.7C1120,192,1280,160,1360,144L1440,128L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"
           />
         </Svg>
-        <View style={styles.below}></View>
+        <View style={styles.above}></View>
+
+        
       </View>
+      <View style={styles.click}>
+            <TouchableOpacity onPress={() => {navigation.navigate('MobileVerification')}}>
+              <Text>click here</Text>
+              
+              </TouchableOpacity>
+        </View>
     </View>
   );
 };
@@ -33,12 +41,17 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-
+  click:{
+    position:'absolute',
+    borderRadius:50,
+    bottom:200,
+    left:150,
+  },
   svgCurve: {
     position: "absolute",
     top: 342,
   },
-  below: {
+  above: {
     backgroundColor: Colors.primary,
     height: 400,
   },
