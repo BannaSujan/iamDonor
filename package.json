@@ -17,7 +17,7 @@
     "react-native-otp-inputs": "^7.0.3",
     "react-native-otp-textinput": "^0.0.8",
     "react-native-vector-icons": "^8.1.0",
-    "react-native-web": "~0.13.12"
+    "react-native-web": "~0.13.12",
     "react-native-svg": "12.1.0"
 
   },
