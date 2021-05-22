@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, Text, View, Dimensions, StatusBar,TouchableOpacity,Button } from "react-native";
 import Svg, { Path } from "react-native-svg";
-
+import { AntDesign } from '@expo/vector-icons';
 import Colors from "../contants/Colors";
 const LoginScreen = ({navigation}) => {
   return (
@@ -27,9 +27,12 @@ const LoginScreen = ({navigation}) => {
         
 
       </View>
+      <Text style={styles.donorDesign}>Donor</Text>
+      <Text style={styles.lRDesign}>LOGIN & REGISTER</Text>
       <View style={styles.click}>
+        
             <TouchableOpacity onPress={() => {navigation.navigate('MobileVerification')}}>
-              <Text>click </Text>
+            <AntDesign style={styles.gobtnDesign}name="rightcircle" size={100} color='Colors.primary'  />
               
               </TouchableOpacity>
         </View>
@@ -57,5 +60,29 @@ const styles = StyleSheet.create({
   above: {
     backgroundColor: Colors.primary,
     height: 400,
+  },
+  donorDesign: {  
+
+    color:'white',
+    fontSize: 65,  
+    textAlign: 'center',  
+    padding: 100,
+    fontWeight:'bold' , 
+    marginVertical: 90,
+    marginTop:-300
+  },
+
+lRDesign: {  
+    color:'black',
+    fontSize:30,
+    textAlign: 'center',  
+    marginTop:200,
+    fontWeight:'bold' , 
+    
+},
+
+gobtnDesign:{
+  marginTop:40,
+  marginLeft: 50,
   },
 });
