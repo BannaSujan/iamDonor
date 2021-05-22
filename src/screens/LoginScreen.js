@@ -25,10 +25,11 @@ const LoginScreen = ({navigation}) => {
         <View style={styles.above}></View>
 
         
+
       </View>
       <View style={styles.click}>
             <TouchableOpacity onPress={() => {navigation.navigate('MobileVerification')}}>
-              <Text>click here</Text>
+              <Text>click </Text>
               
               </TouchableOpacity>
         </View>
