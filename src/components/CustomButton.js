@@ -6,12 +6,14 @@ import Colors from "../contants/Colors";
 
 
 const CustomButton=(props)=> {
-
+    const clickMe = () =>{
+      props.clickMe
+    }
 
     return (
         
             <View >
-                  <TouchableOpacity onPress={props.onPress} style={styles.appButtonContainer}>
+                  <TouchableOpacity onPress={this.clickMe} style={styles.appButtonContainer}>
                       <Text style={styles.appButtonText} >{props.buttontitle}</Text>
                   </TouchableOpacity>
             </View>

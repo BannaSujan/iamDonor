@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
-import React, { Component, useRef } from "react";
+import React, { Component, useRef, useState } from "react";
+import { useEffect } from "react";
 import {
   StyleSheet,
   Text,
@@ -7,31 +8,24 @@ import {
   TextInput,
   TouchableOpacity,
   Alert,
+  Keyboard,
 } from "react-native";
 import ArrowButton from "../components/ArrowButton";
 import CustomButton from "../components/CustomButton";
 import Colors from "../contants/Colors";
 
-export default class OTPScreen extends Component {
-  constructor({navigation}) {
-    super({navigation});
-    this.refs = React.createRef;
-    this.state = {
-      pin1: "",
-      pin2: "",
-      pin3: "",
-      pin4: "",
-    };
-  }
-  componentDidMount() {
-    this.refs.pin1ref.focus();
-  }
-
-  handleVerify() {
-    Alert.alert("OTP Verified", "OTP has been verified", [{ text: "OK" }]);
-  }
-  render() {
-    const { pin1, pin2, pin3, pin4 } = this.state;
+export default function OTPScreen (){
+    const pin1ref = useRef(null)
+    const pin2ref = useRef(null)
+    const pin3ref = useRef(null)
+    const pin4ref = useRef(null)
+    const [ pin1 , setPin1] = useState("")
+    const [ pin2 , setPin2] = useState("")
+    const [ pin3 , setPin3] = useState("")
+    const [ pin4 , setPin4] = useState("")
+    const handleVerify=()=>{
+      Keyboard.dismiss()
+    }
     return (
       <View style={styles.container}>
         <View style={styles.content}>
@@ -40,13 +34,14 @@ export default class OTPScreen extends Component {
           <View style={styles.circles}>
             <View>
               <TextInput
+                autoFocus={true}
                 style={styles.otpInputs}
                 maxLength={1}
-                ref={"pin1ref"}
+                ref={pin1ref}
                 onChangeText={(pin1) => {
-                  this.setState({ pin1: pin1 });
+                  setPin1(pin1)
                   if (pin1 != "") {
-                    this.refs.pin2ref.focus();
+                    pin2ref.current.focus()
                   }
                 }}
                 value={pin1}
@@ -57,14 +52,14 @@ export default class OTPScreen extends Component {
               <TextInput
                 style={styles.otpInputs}
                 maxLength={1}
-                ref={"pin2ref"}
+                ref={pin2ref}
                 onChangeText={(pin2) => {
-                  this.setState({ pin2: pin2 });
+                  setPin2(pin2)
                   if (pin2 != "") {
-                    this.refs.pin3ref.focus();
+                    pin3ref.current.focus()
                   }
                   if (pin2 == "") {
-                    this.refs.pin1ref.focus();
+                    pin1ref.current.focus()
                   }
                 }}
                 value={pin2}
@@ -75,14 +70,14 @@ export default class OTPScreen extends Component {
               <TextInput
                 style={styles.otpInputs}
                 maxLength={1}
-                ref={"pin3ref"}
+                ref={pin3ref}
                 onChangeText={(pin3) => {
-                  this.setState({ pin3: pin3 });
+                  setPin3(pin3)
                   if (pin3 != "") {
-                    this.refs.pin4ref.focus();
+                    pin4ref.current.focus()
                   }
                   if (pin3 == "") {
-                    this.refs.pin2ref.focus();
+                    pin2ref.current.focus()
                   }
                 }}
                 value={pin3}
@@ -93,11 +88,11 @@ export default class OTPScreen extends Component {
               <TextInput
                 style={styles.otpInputs}
                 maxLength={1}
-                ref={"pin4ref"}
+                ref={pin4ref}
                 onChangeText={(pin4) => {
-                  this.setState({ pin4: pin4 });
+                  setPin4(pin4)
                   if (pin4 == "") {
-                    this.refs.pin3ref.focus();
+                    pin3ref.current.focus()
                   }
                 }}
                 value={pin4}
@@ -118,12 +113,11 @@ export default class OTPScreen extends Component {
           >
             Resend OTP
           </Text>
-          <CustomButton buttontitle="Verify" clickMe={this.handleVerify} />
+          <CustomButton buttontitle="Verify" clickMe={handleVerify} />
         </View>
       </View>
     );
   }
-}
 
 const styles = StyleSheet.create({
   container: {
@@ -145,7 +139,8 @@ const styles = StyleSheet.create({
     fontWeight: "700",
     color: "black",
     fontSize: 24,
-    textAlign: "center",
+    textAlign: "left",
+    paddingLeft:65,
     marginVertical: 240,
   },
   otpInputs: {
